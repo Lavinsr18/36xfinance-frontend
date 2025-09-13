@@ -64,7 +64,7 @@ export default function AdminLogin() {
               <Input 
                 id="username"
                 type="text" 
-                placeholder="36xfinance" 
+                placeholder="Pleaser Enter Username/ID" 
                 value={credentials.username}
                 onChange={(e) => setCredentials(prev => ({ ...prev, username: e.target.value }))}
                 className="w-full"
@@ -79,7 +79,7 @@ export default function AdminLogin() {
               <Input 
                 id="password"
                 type="password" 
-                placeholder="••••••••" 
+                placeholder="Please Enter Password Here" 
                 value={credentials.password}
                 onChange={(e) => setCredentials(prev => ({ ...prev, password: e.target.value }))}
                 className="w-full"

@@ -106,24 +106,24 @@ export default function Layout({ children }: LayoutProps) {
 
                 return (
                   <Link key={item.path} href={item.path}>
-                    <span
-                      className={`transition-colors duration-300 cursor-pointer ${
-                        location === item.path
-                          ? "text-[hsl(250,84%,54%)] font-semibold"
-                          : "text-gray-700 hover:text-[hsl(250,84%,54%)]"
-                      }`}
-                    >
-                      {item.label}
-                    </span>
-                  </Link>
+  <span
+    className={`relative cursor-pointer font-helvetica transition-colors duration-300 ${
+      location === item.path
+        ? "text-[hsl(250,84%,54%)] font-semibold"
+        : "text-gray-700 hover:text-[hsl(250,84%,54%)]"
+    }`}
+  >
+    {item.label}
+    <span
+      className={`absolute left-0 -bottom-1 h-[2px] bg-[hsl(250,84%,54%)] transition-all duration-300 ${
+        location === item.path ? "w-full" : "w-0 group-hover:w-full"
+      }`}
+    />
+  </span>
+</Link>
+
                 );
               })}
-
-              <Link href="/login">
-                <span className="bg-gradient-to-r from-[hsl(250,84%,54%)] to-[hsl(217,91%,60%)] text-white px-4 py-2 rounded-lg hover:shadow-lg transition-all duration-300 cursor-pointer">
-                  Admin
-                </span>
-              </Link>
             </div>
 
             {/* Mobile menu button */}
@@ -207,14 +207,6 @@ export default function Layout({ children }: LayoutProps) {
                     </Link>
                   );
                 })}
-                <Link href="/admin">
-                  <span
-                    className="block bg-gradient-to-r from-[hsl(250,84%,54%)] to-[hsl(217,91%,60%)] text-white px-4 py-2 rounded-lg text-center cursor-pointer"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Admin
-                  </span>
-                </Link>
               </motion.div>
             )}
           </AnimatePresence>
