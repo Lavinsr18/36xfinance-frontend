@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://three6xfinance-back-5.onrender.com/api/$1"
+    }
+  ]
+}
